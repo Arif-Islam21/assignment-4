@@ -50,10 +50,15 @@ function deleteInvalids(array) {
     return numbers;
   }
 }
+// const arr = ["1", { num: 2 }, NaN];
+// const arr = [1, 2, -3];
+// const arr = { num: [1, 2, 3] };
+// const calling = deleteInvalids(arr);
+// console.log(calling);
 
 function password(obj) {
-  if (obj.birthYear.toString().length !== 4) {
-    return "undifined";
+  if (obj.birthYear.toString().length !== 4 || Object.keys(obj).length < 3) {
+    return "invalid";
   } else {
     const firstName = obj.name;
     const birth = obj.birthYear;
@@ -63,8 +68,9 @@ function password(obj) {
     return result;
   }
 }
-
-const user = { name: "maisha", birthYear: 2002 };
 // const user = { name: "kolimuddin", birthYear: 1999, siteName: "google" };
-const result = password(user);
-console.log(result);
+// const user = { name: "rahat", birthYear: 2002, siteName: "Facebook" };
+// const user = { name: "toky", birthYear: 200, siteName: "Facebook" };
+// const user = { name: "maisha", birthYear: 2002 };
+// const result = password(user);
+// console.log(result);
