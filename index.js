@@ -13,5 +13,17 @@ function calculateMoney(ticketSale) {
     return saving;
   }
 }
-const result = calculateMoney(-130);
-console.log(result);
+
+function checkName(name) {
+  const lower = name.toLowerCase();
+  const last = lower.charAt(lower.length - 1);
+  if (last === "f") {
+    console.log("I have got it");
+  }
+  //   console.log(lowerName);
+  //   for (let i = 0; i < name.length; i++) {
+  //     console.log(name[i]);
+  //   }
+}
+const goodname = checkName("Ariful");
+console.log(goodname);
