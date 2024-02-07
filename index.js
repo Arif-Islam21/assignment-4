@@ -104,7 +104,13 @@ function monthlySavings(arr, livingCost) {
     }
   }
 }
-const payments = [900, 2700, 3400, 1233, 5455, 435, 5455, 34323];
-const expenses = 10000;
-const calling = monthlySavings(expenses, payments);
+// const payments = [1000, 2000, 3000];
+// const expenses = 5400;
+// const payments = [1000, 2000, 2500];
+// const expenses = 5000;
+// const payments = [900, 2700, 3400];
+// const expenses = 10000;
+const payments = 100;
+const expenses = [900, 2700, 3400];
+const calling = monthlySavings(payments, expenses);
 console.log(calling);
