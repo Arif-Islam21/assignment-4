@@ -74,3 +74,21 @@ function password(obj) {
 // const user = { name: "maisha", birthYear: 2002 };
 // const result = password(user);
 // console.log(result);
+
+function monthlySavings(arr, livingCost) {
+  let pays = [];
+  for (let payment of arr) {
+    if (payment < 3000) {
+      pays.push(payment);
+    } else if (payment >= 3000) {
+      const tax = payment * 0.2;
+      const taxAfter = payment - tax;
+      pays.push(taxAfter);
+    }
+  }
+  console.log(pays);
+}
+const payments = [1000, 2000, 3000];
+const expenses = 5400;
+const calling = monthlySavings(payments, expenses);
+console.log(calling);
