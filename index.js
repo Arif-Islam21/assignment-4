@@ -35,3 +35,22 @@ function checkName(name) {
     }
   }
 }
+
+function deleteInvalids(array) {
+  if (Array.isArray(array) === false) {
+    return "Invalid Array";
+  } else {
+    const numbers = [];
+    for (const item of array) {
+      if (Number.isNaN(item) === false && typeof item === "number") {
+        //   console.log("found numbver", item);
+        numbers.push(item);
+      }
+    }
+    return numbers;
+  }
+}
+
+const arr = { num: [1, 2, 3] };
+const callArr = deleteInvalids(arr);
+console.log(callArr);
