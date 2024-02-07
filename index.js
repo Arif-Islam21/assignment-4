@@ -76,19 +76,35 @@ function password(obj) {
 // console.log(result);
 
 function monthlySavings(arr, livingCost) {
-  let pays = [];
-  for (let payment of arr) {
-    if (payment < 3000) {
-      pays.push(payment);
-    } else if (payment >= 3000) {
-      const tax = payment * 0.2;
-      const taxAfter = payment - tax;
-      pays.push(taxAfter);
+  if (Array.isArray(arr) === false || typeof livingCost !== "number") {
+    const invalid = "invalid input";
+    return invalid;
+  } else {
+    let pays = [];
+    let totalEarning = 0;
+    for (let payment of arr) {
+      if (payment < 3000) {
+        pays.push(payment);
+      } else if (payment >= 3000) {
+        const tax = payment * 0.2;
+        const taxAfter = payment - tax;
+        pays.push(taxAfter);
+      }
+    }
+    // console.log(pays);
+    for (const pay of pays) {
+      totalEarning += pay;
+    }
+    // console.log(totalEarning);
+    const saving = totalEarning - livingCost;
+    if (saving < 0) {
+      return "earn more";
+    } else {
+      return saving;
     }
   }
-  console.log(pays);
 }
-const payments = [1000, 2000, 3000];
-const expenses = 5400;
-const calling = monthlySavings(payments, expenses);
+const payments = [900, 2700, 3400, 1233, 5455, 435, 5455, 34323];
+const expenses = 10000;
+const calling = monthlySavings(expenses, payments);
 console.log(calling);
