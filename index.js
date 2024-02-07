@@ -51,6 +51,20 @@ function deleteInvalids(array) {
   }
 }
 
-const arr = { num: [1, 2, 3] };
-const callArr = deleteInvalids(arr);
-console.log(callArr);
+function password(obj) {
+  if (obj.birthYear.toString().length !== 4) {
+    return "undifined";
+  } else {
+    const firstName = obj.name;
+    const birth = obj.birthYear;
+    const site = obj.siteName;
+    const firstUp = site[0].toUpperCase() + site.slice(1);
+    const result = `${firstUp}#${firstName}@${birth}`;
+    return result;
+  }
+}
+
+const user = { name: "maisha", birthYear: 2002 };
+// const user = { name: "kolimuddin", birthYear: 1999, siteName: "google" };
+const result = password(user);
+console.log(result);
