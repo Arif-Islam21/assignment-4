@@ -15,15 +15,23 @@ function calculateMoney(ticketSale) {
 }
 
 function checkName(name) {
-  const lower = name.toLowerCase();
-  const last = lower.charAt(lower.length - 1);
-  if (last === "f") {
-    console.log("I have got it");
+  if (typeof name !== "string") {
+    return "invalid";
+  } else {
+    const lower = name.toLowerCase();
+    const last = lower.charAt(lower.length - 1);
+    if (
+      last === "a" ||
+      last === "y" ||
+      last === "i" ||
+      last === "e" ||
+      last === "o" ||
+      last === "u" ||
+      last === "w"
+    ) {
+      return "Good Name";
+    } else {
+      return "Bad Name";
+    }
   }
-  //   console.log(lowerName);
-  //   for (let i = 0; i < name.length; i++) {
-  //     console.log(name[i]);
-  //   }
 }
-const goodname = checkName("Ariful");
-console.log(goodname);
