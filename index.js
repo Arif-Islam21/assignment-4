@@ -43,18 +43,12 @@ function deleteInvalids(array) {
     const numbers = [];
     for (const item of array) {
       if (Number.isNaN(item) === false && typeof item === "number") {
-        //   console.log("found numbver", item);
         numbers.push(item);
       }
     }
     return numbers;
   }
 }
-// const arr = ["1", { num: 2 }, NaN];
-// const arr = [1, 2, -3];
-// const arr = { num: [1, 2, 3] };
-// const calling = deleteInvalids(arr);
-// console.log(calling);
 
 function password(obj) {
   if (obj.birthYear.toString().length !== 4 || Object.keys(obj).length < 3) {
@@ -68,12 +62,6 @@ function password(obj) {
     return result;
   }
 }
-// const user = { name: "kolimuddin", birthYear: 1999, siteName: "google" };
-// const user = { name: "rahat", birthYear: 2002, siteName: "Facebook" };
-// const user = { name: "toky", birthYear: 200, siteName: "Facebook" };
-// const user = { name: "maisha", birthYear: 2002 };
-// const result = password(user);
-// console.log(result);
 
 function monthlySavings(arr, livingCost) {
   if (Array.isArray(arr) === false || typeof livingCost !== "number") {
@@ -91,11 +79,9 @@ function monthlySavings(arr, livingCost) {
         pays.push(taxAfter);
       }
     }
-    // console.log(pays);
     for (const pay of pays) {
       totalEarning += pay;
     }
-    // console.log(totalEarning);
     const saving = totalEarning - livingCost;
     if (saving < 0) {
       return "earn more";
@@ -104,13 +90,3 @@ function monthlySavings(arr, livingCost) {
     }
   }
 }
-// const payments = [1000, 2000, 3000];
-// const expenses = 5400;
-// const payments = [1000, 2000, 2500];
-// const expenses = 5000;
-// const payments = [900, 2700, 3400];
-// const expenses = 10000;
-const payments = 100;
-const expenses = [900, 2700, 3400];
-const calling = monthlySavings(payments, expenses);
-console.log(calling);
